@@ -16,13 +16,27 @@
 - *Surveying Engineering*: Control surveying, engineering surveying, and deformation monitoring
 - *Data Processing*: GNSS data analysis, coordinate transformation, and adjustment computation
 
-== Skills
+== Programming Skills
 
-- *GNSS Technologies*: GPS, GLONASS, Galileo, BeiDou navigation systems
-- *Positioning Methods*: RTK, PPP, static/kinematic positioning
-- *Software*: ArcGIS, QGIS, GAMIT/GLOBK, Bernese
-- *Programming*: Python (scientific computing), MATLAB
-- *Surveying Instruments*: Total stations, digital levels, GNSS receivers
+#strong([Core Languages]): C/C++, Python, MATLAB, C\#, Java, Fortran
+
+*Geodetic Applications*:
+- GNSS data processing and analysis (Python/MATLAB)
+- Coordinate transformation and adjustment algorithms (C++/Fortran)
+- RTK/PPP positioning software development
+- Scientific computing and numerical methods
+
+*Software Development*:
+- Desktop applications (C\#/Java)
+- Data visualization and analysis (Python/MATLAB)
+- Algorithm implementation and optimization (C++)
+
+== Technical Skills
+
+- *GNSS Systems*: GPS, GLONASS, Galileo, BeiDou (BDS)
+- *Positioning Techniques*: RTK, PPP, static/kinematic, precise point positioning
+- *Geodetic Software*: GAMIT/GLOBK, Bernese, ArcGIS, QGIS
+- *Surveying Instruments*: GNSS receivers, total stations, digital levels
 
 == Contact
 
