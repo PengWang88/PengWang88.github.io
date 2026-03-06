@@ -4,9 +4,7 @@
   description: "Research notes on geodesy and GNSS",
 )
 
-= 博客
-
-关于大地测量、GNSS/北斗定位、测绘工程和编程的学习笔记与思考。
+= Blog
 
 == 2026
 
