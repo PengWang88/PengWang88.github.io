@@ -1,69 +1,49 @@
 #import "../index.typ": template, tufted
 #show: template.with(
-  title: "Edward R. Tufte",
-  description: "CV of Edward R. Tufte",
-  lang: "en"
+  title: "王鹏 Wang Peng",
+  description: "个人简历",
+  lang: "zh"
 )
-#import "@preview/citegeist:0.2.0": load-bibliography
 
-= Edward R. Tufte
-
-#tufted.margin-note[
-  Statistician, Artist, and Professor Emeritus \
-  Website: #link("https://www.edwardtufte.com")[edwardtufte.com] \
-  Email: #link("mailto:noreply@edwardtufte.com", "noreply@edwardtufte.com")
-]
-
-#link("CV-PDF.pdf")[[PDF version is available! Click me!]]\
-#link("CV-PDF.pdf")[[点击这里查看 PDF 版本！]]
-
-Research in statistical evidence and analytical design for information visualization, integrating principles from statistics, graphic design, and cognitive science for the effective presentation of quantitative data.
-
-== Experience
-
-- *1983--Present*: Founder & Publisher, Graphics Press. Independent publishing house specializing in information design and data visualization.
-- *1977--1999*: Professor Emeritus, Yale University. Departments of Political Science, Statistics, and Computer Science.
-- *1967--1977*: Instructor, Princeton University. Woodrow Wilson School of Public and International Affairs.
-
-== Artworks
+= 王鹏
 
 #tufted.margin-note[
-  #image("escaping-flatland.webp")
+  测绘工程专业学生 \
+  邮箱：#link("mailto:2417420950@qq.com", "2417420950@qq.com") \
+  GitHub：#link("https://github.com/PengWang88", "@PengWang88")
 ]
 
-#tufted.margin-note[
-  A homage to Edward R. Tufte's large stainless steel sculpture titled _Escaping Flatland_
-]
+专注于地理信息系统、测量技术与数据处理领域的专业学习与研究。
 
-Founder of Hogpen Hill Farms, a 234-acre sculpture park in Woodbury, Connecticut. Creator of large-scale works including _Larkin’s Twig_ and the _Escaping Flatland_ series, exhibited at the Aldrich Contemporary Art Museum.
+== 教育背景
 
-== Research Contributions
+- *本科在读*：测绘工程专业
+  - 专业课程：测量学、工程测量、GIS 原理与应用
+  - 学习方向：地理信息系统、遥感技术、数据处理
 
-Development of sparklines, a method for embedding high-resolution data graphics within text, and formulation of the data-ink ratio as a quantitative measure of graphical efficiency.
+== 专业技能
 
-== Books
+- *测量技术*：工程测量、控制测量、地形测量
+- *GIS 软件*：ArcGIS、QGIS
+- *数据处理*：Python 数据分析、测量数据处理
+- *遥感技术*：遥感图像处理与应用
 
-#{
-  let bib = load-bibliography(read("books.bib"))
-  for item in bib.values().rev() [
-    #let data = item.fields
-    - #strong(data.year): #emph(data.title)
-  ]
-}
+== 学习领域
 
-== Papers
+- 地理信息系统 (GIS) 应用与开发
+- 工程测量与数据处理
+- 遥感技术原理与应用
+- 空间数据分析
 
-#{
-  let bib = load-bibliography(read("papers.bib"))
-  for item in bib.values().rev() [
-    #let data = item.fields
-    - #data.author, "#data.title," #emph(data.journal), #data.year. DOI: #link(data.url)[#data.doi]
-  ]
-}
+== 项目经历
 
+// 在这里添加项目经验
+// 例如：
+// - *2025*：参与某某测量工程项目
+//   - 负责外业测量与数据处理
+//   - 使用全站仪、GPS 等设备进行数据采集
 
-== Education
+== 联系方式
 
-- PhD in Political Science: Yale University (1968).
-- MS in Statistics: Stanford University.
-- BS in Statistics: Stanford University.
+- 邮箱：2417420950@qq.com
+- GitHub：#link("https://github.com/PengWang88")[@PengWang88]

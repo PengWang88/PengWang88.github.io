@@ -1,15 +1,26 @@
 #import "../config.typ": template, tufted
 #show: template
 
-= 欢迎来到我的网站
+= 你好，我是王鹏
 
-你好！这是我的个人网站。
+#link("/CV/")[#strong([关于我])]
+| 测绘工程专业学生
+| 关注地理信息系统、测量技术与数据处理
 
-// 在这里添加你的首页内容
-// 可以使用以下语法：
-// - 一级标题：= 标题
-// - 二级标题：== 标题
-// - 三级标题：=== 标题
-// - 段落：直接输入文字
-// - 链接：#link("https://example.com")[链接文字]
-// - 图片：#image("path/to/image.png")
+---
+
+== 学习方向
+
+- 地理信息系统 (GIS)
+- 测量学与工程测量
+- 遥感技术
+- 数据处理与分析
+
+== 联系方式
+
+- 邮箱：#link("mailto:2417420950@qq.com")[2417420950@qq.com]
+- GitHub：#link("https://github.com/PengWang88")[@PengWang88]
+
+---
+
+#link("/Blog/")[#strong([浏览博客 →])]
