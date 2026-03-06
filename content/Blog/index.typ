@@ -1,18 +1,14 @@
 #import "../index.typ": template, tufted
 #show: template.with(
   title: "Blog",
-  description: "Some blog examples",
+  description: "My personal blog",
 )
 
 = 博客 / Blog
 
-中文博客样例可参考 #link("https://yousa-mirage.github.io/Blog")[我的个人网站]。
+欢迎来到我的博客，这里将分享我的思考和记录。
 
-== 2025
+== 2026
 
-- #link("2025-10-30-normal-distribution/")[Normal Distribution]
-- #link("2025-04-16-monkeys-apes/")[Monkeys vs Apes]
-
-== 2024
-
-- #link("2024-10-04-iterators-generators/")[Iterators vs Generators in Python]
+// 在这里添加你的博客文章
+// - #link("2026-03-06-your-post/")[文章标题]
