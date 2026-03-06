@@ -5,6 +5,7 @@
 
 #link("/CV/")[#strong([About Me])]
 | Geomatics Engineering Student
+| China University of Mining and Technology
 | Focused on Geodesy and GNSS/BeiDou High-Precision Positioning
 
 ---

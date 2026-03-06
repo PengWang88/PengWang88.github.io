@@ -20,7 +20,7 @@
   /// 网站作者。用于生成 <meta name="author"> 标签。（可选）
   author: "Wang Peng",
   /// 网站描述。用于 SEO 搜索引擎摘要和社交媒体分享预览。（可选）
-  description: "Geomatics engineering student focused on geodesy and GNSS/BeiDou high-precision positioning",
+  description: "Geomatics engineering student at China University of Mining and Technology, focused on geodesy and GNSS/BeiDou high-precision positioning",
   /// 站点的根 URL (例如 "https://example.com")。用于生成 Canonical URL 元数据。（可选）
   website-url: "https://pengwang88.github.io/",
   /// 网站的默认语言，例如 "zh" 或 "en"，默认为 "zh"。

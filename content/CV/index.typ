@@ -8,6 +8,7 @@
 
 #tufted.margin-note[
   Geomatics Engineering Student \
+  China University of Mining and Technology \
   Email: #link("mailto:2417420950@qq.com", "2417420950\@qq.com") \
   GitHub: #link("https://github.com/PengWang88", "\@PengWang88")
 ]
@@ -16,7 +17,9 @@ Strong programming background with expertise in multiple languages and their app
 
 == Education
 
-- *Undergraduate Student*: Geomatics Engineering
+- *Undergraduate Student*: #strong([China University of Mining and Technology (CUMT)])
+  - Department of Surveying and Mapping Engineering
+  - Major: Geomatics Engineering
   - Coursework: Geodesy, GNSS Measurement & Positioning, Engineering Surveying, Programming
   - Research Focus: Satellite geodesy, high-precision positioning algorithms, software development
 
