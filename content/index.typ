@@ -1,4 +1,4 @@
-#import “../config.typ”: template, tufted
+#import "../config.typ": template, tufted
 #show: template
 
 = 欢迎来到我的网站
@@ -11,5 +11,5 @@
 // - 二级标题：== 标题
 // - 三级标题：=== 标题
 // - 段落：直接输入文字
-// - 链接：#link(“https://example.com”)[链接文字]
-// - 图片：#image(“path/to/image.png”)
+// - 链接：#link("https://example.com")[链接文字]
+// - 图片：#image("path/to/image.png")
