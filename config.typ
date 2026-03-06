@@ -31,7 +31,7 @@
 
   /// 自定义页眉元素列表 (content 数组)。显示在页面顶部。
   header-elements: (
-    [Geodesy & GNSS Research],
+    [Stay hungry, stay foolish],
   ),
   /// 自定义页脚元素列表 (content 数组)，显示在页面底部。
   footer-elements: (
