@@ -6,7 +6,7 @@
 
 = Blog
 
-关于大地测量、GNSS/北斗定位、测绘工程和编程的学习笔记与思考。
+Notes and thoughts on geodesy, GNSS/BeiDou positioning, surveying engineering, and programming.
 
 == 2026
 
