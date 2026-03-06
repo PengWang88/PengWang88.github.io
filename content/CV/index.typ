@@ -45,5 +45,5 @@
 
 == 联系方式
 
-- 邮箱：2417420950@qq.com
-- GitHub：#link("https://github.com/PengWang88")[@PengWang88]
+- 邮箱：2417420950\@qq.com
+- GitHub：#link("https://github.com/PengWang88")[\@PengWang88]

@@ -18,8 +18,8 @@
 
 == 联系方式
 
-- 邮箱：#link("mailto:2417420950@qq.com")[2417420950@qq.com]
-- GitHub：#link("https://github.com/PengWang88")[@PengWang88]
+- 邮箱：#link("mailto:2417420950@qq.com")[2417420950\@qq.com]
+- GitHub：#link("https://github.com/PengWang88")[\@PengWang88]
 
 ---
 
