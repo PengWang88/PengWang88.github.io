@@ -1,26 +1,34 @@
 #import "../config.typ": template, tufted
 #show: template
 
-= 你好，我是王鹏
+= Hello, I'm Wang Peng
 
-#link("/CV/")[#strong([关于我])]
-| 测绘工程专业学生
-| 关注地理信息系统、测量技术与数据处理
-
----
-
-== 学习方向
-
-- 地理信息系统 (GIS)
-- 测量学与工程测量
-- 遥感技术
-- 数据处理与分析
-
-== 联系方式
-
-- 邮箱：#link("mailto:2417420950@qq.com")[2417420950\@qq.com]
-- GitHub：#link("https://github.com/PengWang88")[\@PengWang88]
+#link("/CV/")[#strong([About Me])]
+| Geomatics Engineering Student
+| Focused on Geodesy and GNSS/BeiDou High-Precision Positioning
 
 ---
 
-#link("/Blog/")[#strong([浏览博客 →])]
+== Research Interests
+
+- *Geodesy*: Physical geodesy, satellite geodesy, and gravity field modeling
+- *GNSS/BeiDou*: High-precision positioning, RTK, PPP, and multi-constellation navigation
+- *Surveying Engineering*: Control surveying, engineering surveying, and deformation monitoring
+- *Data Processing*: GNSS data analysis, coordinate transformation, and adjustment computation
+
+== Skills
+
+- *GNSS Technologies*: GPS, GLONASS, Galileo, BeiDou navigation systems
+- *Positioning Methods*: RTK, PPP, static/kinematic positioning
+- *Software*: ArcGIS, QGIS, GAMIT/GLOBK, Bernese
+- *Programming*: Python (scientific computing), MATLAB
+- *Surveying Instruments*: Total stations, digital levels, GNSS receivers
+
+== Contact
+
+- Email: #link("mailto:2417420950@qq.com")[2417420950\@qq.com]
+- GitHub: #link("https://github.com/PengWang88")[\@PengWang88]
+
+---
+
+#link("/Blog/")[#strong([View Blog →])]

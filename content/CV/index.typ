@@ -1,49 +1,53 @@
 #import "../index.typ": template, tufted
 #show: template.with(
-  title: "王鹏 Wang Peng",
-  description: "个人简历",
-  lang: "zh"
+  title: "Wang Peng - CV",
+  description: "Curriculum Vitae",
 )
 
-= 王鹏
+= Wang Peng
 
 #tufted.margin-note[
-  测绘工程专业学生 \
-  邮箱：#link("mailto:2417420950@qq.com", "2417420950@qq.com") \
-  GitHub：#link("https://github.com/PengWang88", "@PengWang88")
+  Geomatics Engineering Student \
+  Email: #link("mailto:2417420950@qq.com", "2417420950\@qq.com") \
+  GitHub: #link("https://github.com/PengWang88", "\@PengWang88")
 ]
 
-专注于地理信息系统、测量技术与数据处理领域的专业学习与研究。
+Focused on geodesy and GNSS/BeiDou high-precision positioning research.
 
-== 教育背景
+== Education
 
-- *本科在读*：测绘工程专业
-  - 专业课程：测量学、工程测量、GIS 原理与应用
-  - 学习方向：地理信息系统、遥感技术、数据处理
+- *Undergraduate Student*: Geomatics Engineering
+  - Coursework: Geodesy, GNSS Measurement & Positioning, Engineering Surveying
+  - Research Focus: Satellite geodesy, high-precision positioning algorithms
 
-== 专业技能
+== Research Interests
 
-- *测量技术*：工程测量、控制测量、地形测量
-- *GIS 软件*：ArcGIS、QGIS
-- *数据处理*：Python 数据分析、测量数据处理
-- *遥感技术*：遥感图像处理与应用
+- *Geodesy*: Physical geodesy, coordinate systems, reference frames
+- *GNSS/BeiDou*: Multi-constellation positioning, RTK/PPP algorithms
+- *Surveying*: Control networks, deformation monitoring, engineering applications
+- *Data Processing*: GNSS data analysis, adjustment computation, quality control
 
-== 学习领域
+== Technical Skills
 
-- 地理信息系统 (GIS) 应用与开发
-- 工程测量与数据处理
-- 遥感技术原理与应用
-- 空间数据分析
+- *GNSS Systems*: GPS, GLONASS, Galileo, BeiDou (BDS)
+- *Positioning Techniques*: RTK, PPP, static/kinematic, precise point positioning
+- *Software Tools*: ArcGIS, QGIS, GAMIT/GLOBK, Bernese GNSS Software
+- *Programming*: Python (NumPy, SciPy, Pandas), MATLAB
+- *Surveying Instruments*: GNSS receivers, total stations, digital levels
 
-== 项目经历
+== Projects
 
-// 在这里添加项目经验
-// 例如：
-// - *2025*：参与某某测量工程项目
-//   - 负责外业测量与数据处理
-//   - 使用全站仪、GPS 等设备进行数据采集
+// Add your projects here
+// Example:
+// - *2025*: GNSS Data Processing for Deformation Monitoring
+//   - Processed continuous GNSS data using Bernese software
+//   - Achieved mm-level positioning accuracy
 
-== 联系方式
+== Academic Background
 
-- 邮箱：2417420950\@qq.com
-- GitHub：#link("https://github.com/PengWang88")[\@PengWang88]
+// Add relevant coursework, certifications, or academic achievements
+
+== Contact
+
+- Email: 2417420950\@qq.com
+- GitHub: #link("https://github.com/PengWang88")[\@PengWang88]

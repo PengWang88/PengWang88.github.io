@@ -14,28 +14,28 @@
     "/Blog/": "Blog",
     "/CV/": "CV",
   ),
-  
+
   /// 网站的站点标题。会显示在浏览器标签页以及 SEO/社交分享卡片中。
-  website-title: "王鹏的个人网站",
+  website-title: "Wang Peng - Geodesy & GNSS Researcher",
   /// 网站作者。用于生成 <meta name="author"> 标签。（可选）
-  author: "王鹏 Wang Peng",
+  author: "Wang Peng",
   /// 网站描述。用于 SEO 搜索引擎摘要和社交媒体分享预览。（可选）
-  description: "测绘工程专业学生的个人博客，记录学习心得与技术探索",
+  description: "Geomatics engineering student focused on geodesy and GNSS/BeiDou high-precision positioning",
   /// 站点的根 URL (例如 "https://example.com")。用于生成 Canonical URL 元数据。（可选）
   website-url: "https://pengwang88.github.io/",
   /// 网站的默认语言，例如 "zh" 或 "en"，默认为 "zh"。
-  lang: "zh",
+  lang: "en",
   /// 订阅源配置 (字符串数组)，指定包含在 RSS 订阅源中的内容目录列表。（可选）
   /// 例如，`("/Blog/",)` 会将 `Blog` 目录下的所有文章包含在订阅源中。
   feed-dir: ("/Blog/",),
-  
+
   /// 自定义页眉元素列表 (content 数组)。显示在页面顶部。
   header-elements: (
-    [欢迎来到我的个人网站],
+    [Geodesy & GNSS Research],
   ),
   /// 自定义页脚元素列表 (content 数组)，显示在页面底部。
   footer-elements: (
-    "© 2026 王鹏 Wang Peng",
+    "© 2026 Wang Peng",
     [Powered by #link("https://github.com/Yousa-Mirage/Tufted-Blog-Template")[Tufted-Blog-Template]],
   ),
 )
