@@ -63,7 +63,7 @@
     - 使用 Homebrew：`brew install typst`
   - Linux 使用你常用的包管理器安装 (**推荐**)。
 
-完成后打开终端，输入并运行 `typst --version`，如果显示版本号则表示安装成功。
+完成后打开终端，输入并运行 `typst --version`，如果显示版本号则表示安装成功。**Test**
 
 ### 2. 安装 Python
 
