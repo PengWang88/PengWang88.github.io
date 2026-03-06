@@ -396,15 +396,15 @@ def run_typst_command(args: list[str]) -> bool:
     try:
         result = subprocess.run(["typst"] + args, capture_output=True, text=True, encoding="utf-8")
         if result.returncode != 0:
-            print(f"  ❌ Typst 错误: {result.stderr.strip()}")
+            print(f"  [ERROR] Typst 错误: {result.stderr.strip()}")
             return False
         return True
     except FileNotFoundError:
-        print("  ❌ 错误: 未找到 typst 命令。请确保已安装 Typst 并添加到 PATH 环境变量中。")
-        print("  📝 安装说明: https://typst.app/open-source/#download")
+        print("  [ERROR] 错误: 未找到 typst 命令。请确保已安装 Typst 并添加到 PATH 环境变量中。")
+        print("  [INFO] 安装说明: https://typst.app/open-source/#download")
         return False
     except Exception as e:
-        print(f"  ❌ 执行 typst 命令时出错: {e}")
+        print(f"  [ERROR] 执行 typst 命令时出错: {e}")
         return False
 
 
@@ -451,7 +451,7 @@ def _compile_files(
         if run_typst_command(args):
             stats.success += 1
         else:
-            print(f"  ❌ {typ_file} 编译失败")
+            print(f"  [ERROR] {typ_file} 编译失败")
             stats.failed += 1
 
     return stats
@@ -472,7 +472,7 @@ def build_html(force: bool = False) -> bool:
     html_files = [f for f in typ_files if "pdf" not in f.stem.lower()]
 
     if not html_files:
-        print("  ⚠️ 未找到任何 HTML 文件。")
+        print("  [WARN] 未找到任何 HTML 文件。")
         return True
 
     print("正在构建 HTML 文件...")
@@ -523,7 +523,7 @@ def build_html(force: bool = False) -> bool:
         build_html_args,
     )
 
-    print(f"✅ HTML 构建完成。{stats.format_summary()}")
+    print(f"[OK] HTML 构建完成。{stats.format_summary()}")
     return not stats.has_failures
 
 
@@ -567,7 +567,7 @@ def build_pdf(force: bool = False) -> bool:
         build_pdf_args,
     )
 
-    print(f"✅ PDF 构建完成。{stats.format_summary()}")
+    print(f"[OK] PDF 构建完成。{stats.format_summary()}")
     return not stats.has_failures
 
 
@@ -588,7 +588,7 @@ def copy_assets() -> bool:
         shutil.copytree(ASSETS_DIR, target_dir)
         return True
     except Exception as e:
-        print(f"  ❌ 复制静态资源失败: {e}")
+        print(f"  [ERROR] 复制静态资源失败: {e}")
         return False
 
 
@@ -638,7 +638,7 @@ def copy_content_assets(force: bool = False) -> bool:
 
         return True
     except Exception as e:
-        print(f"  ❌ 复制内容资源文件失败: {e}")
+        print(f"  [ERROR] 复制内容资源文件失败: {e}")
         return False
 
 
@@ -660,10 +660,10 @@ def clean() -> bool:
             else:
                 item.unlink()
 
-        print(f"  ✅ 已清理 {SITE_DIR}/ 目录。")
+        print(f"  [OK] 已清理 {SITE_DIR}/ 目录。")
         return True
     except Exception as e:
-        print(f"  ❌ 清理失败: {e}")
+        print(f"  [ERROR] 清理失败: {e}")
         return False
 
 
@@ -692,7 +692,7 @@ def preview(port: int = 8000, open_browser_flag: bool = True) -> bool:
         def open_browser():
             time.sleep(1.5)  # 等待服务器启动
             url = f"http://localhost:{port}"
-            print(f"  🚀 正在打开浏览器: {url}")
+            print(f"  [BUILD] 正在打开浏览器: {url}")
             webbrowser.open(url)
 
         # 在后台线程中打开浏览器
@@ -723,7 +723,7 @@ def preview(port: int = 8000, open_browser_flag: bool = True) -> bool:
         print("\n服务器已停止。")
         return True
     except Exception as e:
-        print(f"  ❌ 启动服务器失败: {e}")
+        print(f"  [ERROR] 启动服务器失败: {e}")
         return False
 
 
@@ -788,7 +788,7 @@ def get_feed_dirs() -> set[str]:
                 c.strip("/") for c in re.findall(r'"([^"]*)"', match.group(1)) if c and c.strip("/")
             )
     except Exception as e:
-        print(f"⚠️ 解析 feed-dir 失败: {e}")
+        print(f"[WARN] 解析 feed-dir 失败: {e}")
 
     return set()
 
@@ -881,7 +881,7 @@ def collect_posts(dirs: set[str], site_url: str) -> list[dict]:
             title, description, link, date_obj = extract_post_metadata(index_html)
 
             if not date_obj:
-                print(f"⚠️ 无法确定文章 '{item.name}' 的日期，已跳过。")
+                print(f"[WARN] 无法确定文章 '{item.name}' 的日期，已跳过。")
                 continue
 
             posts.append(
@@ -988,7 +988,7 @@ def generate_rss(site_url: str) -> bool:
     dirs = get_feed_dirs()
 
     if not dirs:
-        print("⚠️ 跳过 RSS 订阅源生成: 未配置任何目录。")
+        print("[WARN] 跳过 RSS 订阅源生成: 未配置任何目录。")
         return True
 
     # 检查是否至少有一个目录存在
@@ -996,17 +996,17 @@ def generate_rss(site_url: str) -> bool:
     missing = dirs - existing
 
     for d in missing:
-        print(f"⚠️ 警告: 配置的目录 '{d}' 不存在。")
+        print(f"[WARN] 警告: 配置的目录 '{d}' 不存在。")
 
     if not existing:
-        print("⚠️ 跳过 RSS 订阅源生成: 配置的目录都不存在。")
+        print("[WARN] 跳过 RSS 订阅源生成: 配置的目录都不存在。")
         return True
 
     # 收集文章
     posts = collect_posts(existing, site_url)
 
     if not posts:
-        print("⚠️ 未找到任何文章，RSS 订阅源为空。")
+        print("[WARN] 未找到任何文章，RSS 订阅源为空。")
         return True
 
     # 按日期降序排序
@@ -1031,15 +1031,15 @@ def generate_rss(site_url: str) -> bool:
     try:
         rss_content = build_rss_xml(posts, config)
         rss_file.write_text(rss_content, encoding="utf-8")
-        print(f"✅ RSS 订阅源生成成功: {rss_file} ({len(posts)} 篇文章)")
+        print(f"[OK] RSS 订阅源生成成功: {rss_file} ({len(posts)} 篇文章)")
         return True
     except ValueError as e:
-        print("❌ 错误: RSS 订阅源生成失败")
+        print("[ERROR] 错误: RSS 订阅源生成失败")
         print(f"   原因: feedgen 库报错 - {e}")
         print("   解决: 请检查 config.typ 中的必需配置字段（title 和 description）")
         return False
     except Exception as e:
-        print("❌ 错误: 生成 RSS 订阅源时出错")
+        print("[ERROR] 错误: 生成 RSS 订阅源时出错")
         print(f"   异常: {type(e).__name__}: {e}")
         return False
 
@@ -1091,10 +1091,10 @@ def generate_sitemap(site_url: str) -> bool:
 
     try:
         sitemap_path.write_text(sitemap_content, encoding="utf-8")
-        print(f"✅ Sitemap 构建完成: 包含 {len(urlset)} 个页面")
+        print(f"[OK] Sitemap 构建完成: 包含 {len(urlset)} 个页面")
         return True
     except Exception as e:
-        print(f"❌ Sitemap 构建失败: {e}")
+        print(f"[ERROR] Sitemap 构建失败: {e}")
         return False
 
 
@@ -1112,7 +1112,7 @@ Sitemap: {site_url}/sitemap.xml
         (SITE_DIR / "robots.txt").write_text(robots_content, encoding="utf-8")
         return True
     except Exception as e:
-        print(f"❌ 生成 robots.txt 失败: {e}")
+        print(f"[ERROR] 生成 robots.txt 失败: {e}")
         return False
 
 
@@ -1128,7 +1128,7 @@ def build(force: bool = False) -> bool:
         clean()
         print("🛠️ 开始完整构建...")
     else:
-        print("🚀 开始增量构建...")
+        print("[BUILD] 开始增量构建...")
     print("-" * 60)
 
     # 确保输出目录存在
@@ -1151,8 +1151,8 @@ def build(force: bool = False) -> bool:
 
     print("-" * 60)
     if all(results):
-        print("✅ 所有构建任务完成！")
-        print(f"  📂 输出目录: {SITE_DIR.absolute()}")
+        print("[OK] 所有构建任务完成！")
+        print(f"  [DIR] 输出目录: {SITE_DIR.absolute()}")
     else:
         print("⚠ 构建完成，但有部分任务失败。")
     print("-" * 60)
@@ -1242,7 +1242,7 @@ if __name__ == "__main__":
         case "preview":
             success = preview(getattr(args, "port", 8000), getattr(args, "open_browser", True))
         case _:
-            print(f"❌ 未知命令: {args.command}")
+            print(f"[ERROR] 未知命令: {args.command}")
             success = False
 
     sys.exit(0 if success else 1)
