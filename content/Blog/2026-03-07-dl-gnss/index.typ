@@ -11,7 +11,7 @@
 
 == 应用场景概述
 
-### 传统GNSS定位的挑战
+=== 传统GNSS定位的挑战
 
 *电离层延迟*
 - 空间和时间变化复杂
@@ -33,7 +33,7 @@
 - 卫星可见性差
 - 定位连续性差
 
-### 深度学习的优势
+=== 深度学习的优势
 
 *强大的特征学习能力*
 - 自动从数据中提取非线性特征
@@ -52,7 +52,7 @@
 
 == 电离层延迟预测
 
-### 电离层延迟特性
+=== 电离层延迟特性
 
 电离层延迟是GNSS定位的主要误差源之一，其大小取决于信号频率、卫星高度角、电离层总电子含量（TEC）等因素。
 
@@ -67,7 +67,7 @@
 - 在高纬度和赤道地区精度下降
 - 无法预测短期电离层扰动
 
-### LSTM网络建模
+=== LSTM网络建模
 
 长短期记忆网络（LSTM）适合处理时间序列数据，可用于电离层TEC预测。
 
@@ -131,7 +131,7 @@ history = model.fit(X_train, y_train,
                     ])
 ```
 
-### Transformer架构
+=== Transformer架构
 
 Transformer架构在长序列建模上表现优异，适合电离层TEC的长期预测。
 
@@ -178,7 +178,7 @@ def build_transformer_iono_model(input_shape, num_transformer_blocks=4):
     return model
 ```
 
-### 性能对比
+=== 性能对比
 
 *不同模型的TEC预测精度：*
 
@@ -197,7 +197,7 @@ def build_transformer_iono_model(input_shape, num_transformer_blocks=4):
 
 == 多路径效应消除
 
-### 多路径效应特征
+=== 多路径效应特征
 
 多路径效应是GNSS定位的另一主要误差源，特别是在城市环境中。
 
@@ -207,7 +207,7 @@ def build_transformer_iono_model(input_shape, num_transformer_blocks=4):
 - 与接收机周围环境密切相关
 - 信号相关性降低
 
-### CNN特征提取
+=== CNN特征提取
 
 卷积神经网络（CNN）能够有效提取多路径效应的空间特征。
 
@@ -263,7 +263,7 @@ def prepare_snr_data(obs_file, snr_threshold=35):
     return np.array(sat_snr)
 ```
 
-### 残差学习
+=== 残差学习
 
 直接学习多路径效应的残差，而非完整观测值。
 
@@ -289,7 +289,7 @@ def build_residual_multipath_model(input_shape):
     return model
 ```
 
-### 多路径效应消除效果
+=== 多路径效应消除效果
 
 *实验数据：城市峡谷环境（24小时观测）*
 
@@ -302,7 +302,7 @@ def build_residual_multipath_model(input_shape):
 
 == PPP快速收敛
 
-### PPP收敛问题
+=== PPP收敛问题
 
 传统PPP需要30-60分钟才能达到厘米级精度，限制了其在实时应用中的使用。
 
@@ -312,7 +312,7 @@ def build_residual_multipath_model(input_shape):
 - 卫星几何分布
 - 观测噪声
 
-### GRU网络加速收敛
+=== GRU网络加速收敛
 
 门控循环单元（GRU）相比LSTM参数更少，训练更快。
 
@@ -350,7 +350,7 @@ def build_gru_ppp_convergence_model(input_shape):
     return model
 ```
 
-### 蒸馏学习
+=== 蒸馏学习
 
 使用大模型知识蒸馏到小模型，提升推理速度。
 
@@ -387,7 +387,7 @@ def distillation_loss(y_true, y_pred, teacher_pred, temperature=3.0, alpha=0.7):
     return alpha * loss_soft * (temperature ** 2) + (1 - alpha) * loss_hard
 ```
 
-### PPP收敛性能
+=== PPP收敛性能
 
 *不同方法的PPP收敛时间对比（静态定位，精度达到2cm）：*
 
@@ -400,7 +400,7 @@ def distillation_loss(y_true, y_pred, teacher_pred, temperature=3.0, alpha=0.7):
 
 == 定位精度提升
 
-### 端到端定位网络
+=== 端到端定位网络
 
 直接从观测数据预测接收机位置，无需传统解算流程。
 
@@ -433,7 +433,7 @@ def build_end_to_end_positioning_model(obs_input_shape, nav_input_shape):
     return model
 ```
 
-### 注意力机制
+=== 注意力机制
 
 使用注意力机制关注重要卫星的观测数据。
 
@@ -493,7 +493,7 @@ def build_attention_positioning_model(input_shape):
     return model
 ```
 
-### 精度提升效果
+=== 精度提升效果
 
 *不同方法的定位精度对比（24小时静态观测）：*
 
@@ -506,7 +506,7 @@ def build_attention_positioning_model(input_shape):
 
 == 实际应用案例
 
-### 武汉大学精密定位实验室
+=== 武汉大学精密定位实验室
 
 *项目背景：*
 - 目标：提升PPP实时定位精度和收敛速度
@@ -522,9 +522,9 @@ def build_attention_positioning_model(input_shape):
 - PPP收敛时间：42分钟 → 12分钟（提升71%）
 - 定位精度：2.3cm → 1.2cm（提升48%）
 - 固定率：88% → 96%（提升8%）
-- 模型推理速度：<10ms（实时处理）
+- 模型推理速度：小于10ms（实时处理）
 
-### 北京市CORS站网
+=== 北京市CORS站网
 
 *应用场景：*
 - 城市环境多路径效应严重
@@ -543,7 +543,7 @@ def build_attention_positioning_model(input_shape):
 
 == 挑战与展望
 
-### 技术挑战
+=== 技术挑战
 
 *数据质量*
 - 需要大量高质量标注数据
@@ -565,7 +565,7 @@ def build_attention_positioning_model(input_shape):
 - 季节和天气变化的影响
 - 新卫星系统的适应性
 
-### 未来发展方向
+=== 未来发展方向
 
 *轻量化模型*
 - 模型压缩和剪枝
